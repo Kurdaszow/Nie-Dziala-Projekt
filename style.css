@@ -1,0 +1,33 @@
+#main{
+    display: flex;
+    background-color: #232730;
+    flex-direction: column;
+    color: #adadad;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+img {
+    float: left;
+}
+#ioknow{
+    height: 200px;
+    width: 500px;
+    
+}
+#gra{
+
+    width: 500px;
+    height: 200px;
+    margin: 25px;
+
+    border: 1px black solid;
+}
+.nwm{
+    float: right;
+}
+a{
+    color: #adadad;
+    text-decoration: none;
+}
