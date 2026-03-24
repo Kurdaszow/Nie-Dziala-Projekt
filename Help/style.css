@@ -1,33 +1,83 @@
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(#2b3135,#0F1214);
+}
 #main{
     display: flex;
-    background-color: #232730;
+    background-image: linear-gradient(to top right,#262B2F,#464c52);
     flex-direction: column;
-    color: #adadad;
+    color: #F5F5F6;
     margin: 0px;
+    width: 800px;
+    font-family: "Motiva Sans",Arial,Helvetica,sans-serif;
     padding: 0px;
     justify-content: center;
     align-items: center;
+
 }
 img {
-    float: left;
+
+    width: 100px;
+    height: 30px;
+    margin-right: 10px;
 }
-#ioknow{
-    height: 200px;
+.ioknow{
+    max-height: 400px;
+    width: 600px;
+    display: flex;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.gra{
+
     width: 500px;
+    height: 150px;
+    margin: 25px;
+    background-color: #0F1214;
+    border: 1px black solid;
+    border-radius: 2%;
+    padding: 25px;
+}
+
+a{
+    color: #F5F5F6;
+    text-decoration: none;
+}
+.games{
+    background-image: linear-gradient(to right ,#252F35 ,#1D2225);
+    border-radius: 5% 5% 0 0;
+    width: 600px;
+}
+.nrofgames{
+    height: 50px;
+    display: flex;
+    z-index: 1;
+    padding-left: 10px;
+    border-radius: 5% 5% 0 0;
+    background-image: linear-gradient(to right,#42505A ,#353B49);
+}
+.gamemin{
+    width: 30%;
+    height:35%;
+    flex-shrink: 0;
+}
+.gra-header{
+    display: flex;
+}
+h5{
+    display: flex;
+    width: 100%;
     
 }
-#gra{
-
-    width: 500px;
-    height: 200px;
-    margin: 25px;
-
-    border: 1px black solid;
+h5 > a{
+    margin-left: auto;
 }
-.nwm{
-    float: right;
-}
-a{
-    color: #adadad;
-    text-decoration: none;
+.profilepic{
+    width :150px;
+    height : 150px;
 }
