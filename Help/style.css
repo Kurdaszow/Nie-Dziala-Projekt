@@ -13,31 +13,27 @@ body{
     flex-direction: column;
     color: #F5F5F6;
     margin: 0px;
-    width: 800px;
+    width: 100vw;
+    max-width: 864px;
     font-family: "Motiva Sans",Arial,Helvetica,sans-serif;
     padding: 0px;
     justify-content: center;
     align-items: center;
 
 }
-img {
 
-    width: 100px;
-    height: 30px;
-    margin-right: 10px;
-}
 .ioknow{
-    max-height: 400px;
-    width: 600px;
+
+    width : 75%;
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 5vh;
     margin-top: 50px;
 }
 .gra{
 
-    width: 500px;
-    height: 150px;
-    margin: 25px;
+    width: 75%;
+
+    margin: 15px;
     background-color: #0F1214;
     border: 1px black solid;
     border-radius: 2%;
@@ -51,20 +47,29 @@ a{
 .games{
     background-image: linear-gradient(to right ,#252F35 ,#1D2225);
     border-radius: 5% 5% 0 0;
-    width: 600px;
+    max-width: 600px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .nrofgames{
     height: 50px;
     display: flex;
+    justify-content: center;
     z-index: 1;
-    padding-left: 10px;
+    width: 100%;
+    margin: 0;
     border-radius: 5% 5% 0 0;
     background-image: linear-gradient(to right,#42505A ,#353B49);
 }
 .gamemin{
     width: 30%;
     height:35%;
+    min-width: 135px;
+    min-height: 60px;
     flex-shrink: 0;
+    margin-right: 10px;
 }
 .gra-header{
     display: flex;
@@ -74,10 +79,35 @@ h5{
     width: 100%;
     
 }
-h5 > a{
-    margin-left: auto;
+.playtime{
+    font-size: 12px;
 }
+
 .profilepic{
     width :150px;
     height : 150px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 550px) {
+  .gra-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  h5{
+    flex-direction: column;
+    align-items: center;
+    font-size: 100%;
+    margin-bottom: 0;
+  }
+    h5 > a{
+    padding-top: 5px;
+}
+  .playtime{
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 551px) {
+    h5 > a{
+    margin-left: auto;
+}
 }
