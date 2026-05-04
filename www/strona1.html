@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Steam, uzytkownicy, informacje">
     <link rel="stylesheet" href="style1.css">
     <script src="https://kit.fontawesome.com/8b9f7a6e32.js" crossorigin="anonymous"></script>
+    <script src="skrypt.js" defer></script>
     <title>Strona 1</title>
 </head>
 <body>
     <div class="menu">
         <a href="strona">Strona głowna</a>
+        <button id="theme-toggle">Dark mode</button>
     </div>
     <header>
-        <h1><span>TYTUŁ STRONY</span></h1>
+        <h3><span>TYTUŁ STRONY</span></h3>
         <p>Opis strony</p>
-        <img src="steam.jpg" alt="obraz steam" class="picture">
+        <img src="steam.jpg" alt="obraz steam" class="picture" fetchpriority="high">
     </header>
     <main>
         <input type="text" class="search" placeholder="Wpisz nazwe uzytkownika...">
