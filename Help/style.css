@@ -49,9 +49,16 @@ a{
     border-radius: 5% 5% 0 0;
     max-width: 600px;
     width: 100vw;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+}
+.gamescont{
+    overflow-y: auto;
+    overflow-x: hidden;   
+    height: 700px;
 }
 .nrofgames{
     height: 50px;
