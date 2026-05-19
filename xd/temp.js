@@ -173,13 +173,11 @@ function updateProgressBar() {
     const unlockedCount = combinedAchievements.filter(a => a.unlocked === true).length;
     const percentage = Math.round((unlockedCount / total) * 100);
 
-    // 1. Aktualizacja tekstu NAD paskiem
     const textElement = document.getElementById("progressText");
     if (textElement) {
         textElement.textContent = `Postęp: ${percentage}% (${unlockedCount}/${total})`;
     }
 
-    // 2. Aktualizacja szerokości paska pod spodem
     if (progresBar) {
         progresBar.style.width = percentage + "%";
     }
