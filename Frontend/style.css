@@ -1,0 +1,125 @@
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(#2b3135,#0F1214);
+}
+#main{
+    display: flex;
+    background-image: linear-gradient(to top right,#262B2F,#464c52);
+    flex-direction: column;
+    color: #F5F5F6;
+    margin: 0px;
+    width: 100vw;
+    max-width: 864px;
+    font-family: "Motiva Sans",Arial,Helvetica,sans-serif;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.ioknow{
+
+    width : 75%;
+    display: flex;
+    margin-bottom: 5vh;
+    margin-top: 50px;
+}
+.gra{
+
+    width: 75%;
+
+    margin: 15px;
+    background-color: #0F1214;
+    border: 1px black solid;
+    border-radius: 2%;
+    padding: 25px;
+}
+
+a{
+    color: #F5F5F6;
+    text-decoration: none;
+}
+#games{
+    background-image: linear-gradient(to right ,#252F35 ,#1D2225);
+    border-radius: 5% 5% 0 0;
+    max-width: 600px;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.gamescont{
+    overflow-y: auto;
+    overflow-x: hidden;   
+    height: 700px;
+}
+.nrofgames{
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+    border-radius: 5% 5% 0 0;
+    background-image: linear-gradient(to right,#42505A ,#353B49);
+}
+#nrofgames > button{
+    height: 50%;
+}
+.gamemin{
+    width: 30%;
+    height:35%;
+    min-width: 135px;
+    min-height: 60px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+.gra-header{
+    display: flex;
+}
+h5{
+    display: flex;
+    width: 100%;
+    
+}
+.playtime{
+    font-size: 12px;
+}
+
+.profilepic{
+    width :150px;
+    height : 150px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 550px) {
+  .gra-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  h5{
+    flex-direction: column;
+    align-items: center;
+    font-size: 100%;
+    margin-bottom: 0;
+  }
+    h5 > a{
+    padding-top: 5px;
+}
+  .playtime{
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 551px) {
+    h5 > a{
+    margin-left: auto;
+}
+}
