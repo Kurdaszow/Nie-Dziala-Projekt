@@ -58,17 +58,22 @@ function renderHome(){
     searchInput.placeholder = "Wpisz nazwe uzytkownika...";
 
     const searchButton = document.createElement("input");
+    const errorr = document.createElement("p")
+    errorr.className="errorr"
+    errorr.style.display = "none";
     searchButton.type = "button";
     searchButton.value = "Szukaj";
     searchButton.className = "accept";
 
     main.appendChild(searchInput);
     main.appendChild(searchButton);
+
     
     searchButton.addEventListener("click", async () => {
         const inputId = searchInput.value.trim();
-        if(!inputId){
-            console.log("no id");
+        if(!inputId || isNaN(inputId)){
+            errorr.textContent = "Nie znaleziono użytkownika";
+            errorr.style.display="block"
             return;
         }
         try {
@@ -81,7 +86,8 @@ function renderHome(){
                 window.location.href = `?steamid=${inputId}`;
             }
         } catch(error){
-            console.error("halo", error);
+            errorr.textContent= "Błąd serwera"
+            errorr.style.display="block"
         }
     });
 
@@ -94,6 +100,7 @@ function renderHome(){
     body.appendChild(menuDiv);
     body.appendChild(header);
     body.appendChild(main);
+    body.appendChild(errorr);
     body.appendChild(copyDiv);
     setupThemeToggle(themeButton);
 };

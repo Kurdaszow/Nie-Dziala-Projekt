@@ -436,3 +436,9 @@ main{
     justify-content:space-between;
     width: 80%;
 }
+.errorr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
