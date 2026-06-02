@@ -34,11 +34,11 @@ function renderHome(){
 
     const h3 = document.createElement("h3");
     const span = document.createElement("span");
-    span.textContent = "TYTUŁ STRONY";
+    span.textContent = "Steam Stats";
     h3.appendChild(span);
 
     const description = document.createElement("p");
-    description.textContent = "Opis strony";
+    description.textContent = "a website to check statistics for steam users and their games";
 
     const img = document.createElement("img");
     img.src = "steam.jpg";
@@ -52,27 +52,31 @@ function renderHome(){
 
     const main = document.createElement("main");
 
+    const searchForm = document.createElement("form");
+    searchForm.className = "search-form";
     const searchInput = document.createElement("input");
     searchInput.type = "text";
     searchInput.className = "search";
-    searchInput.placeholder = "Wpisz nazwe uzytkownika...";
-
+    searchInput.placeholder = "Wpisz id użytkownika";
+    searchInput.required = true;
     const searchButton = document.createElement("input");
     const errorr = document.createElement("p")
-    errorr.className="errorr"
-    errorr.style.display = "none";
-    searchButton.type = "button";
+    searchButton.type = "submit";
     searchButton.value = "Szukaj";
     searchButton.className = "accept";
-
-    main.appendChild(searchInput);
-    main.appendChild(searchButton);
+    const searchdiv = document.createElement("div")
+    searchdiv.className="searchdiv"
+    searchdiv.appendChild(searchInput);
+    searchdiv.appendChild(searchButton);
+    searchForm.appendChild(searchdiv)
+    main.appendChild(searchForm);
 
     
-    searchButton.addEventListener("click", async () => {
+    searchForm.addEventListener("submit", async (event) => {
+        event.preventDefault()
         const inputId = searchInput.value.trim();
         if(!inputId || isNaN(inputId)){
-            errorr.textContent = "Nie znaleziono użytkownika";
+            errorr.textContent = "Wprowadz poprawne id";
             errorr.style.display="block"
             return;
         }
@@ -81,7 +85,8 @@ function renderHome(){
             const userData = await userResponse.json();   
             const player = userData.response.players[0];
             if(!player){
-                console.log("no player");
+                errorr.textContent = "Nie znaleziono użytkownika";
+                errorr.style.display="block"
             } else {
                 window.location.href = `?steamid=${inputId}`;
             }
@@ -100,7 +105,7 @@ function renderHome(){
     body.appendChild(menuDiv);
     body.appendChild(header);
     body.appendChild(main);
-    body.appendChild(errorr);
+    searchForm.appendChild(errorr);
     body.appendChild(copyDiv);
     setupThemeToggle(themeButton);
 };
@@ -143,7 +148,12 @@ async function renderUser() {
     playerdata = await getUserData();
 
     if (!games2 || !playerdata) {
-        document.body.textContent = "Failed to load Steam data";
+        document.body.textContent="Nie udało się pobrać danych użytkownika"
+        let linkback = document.createElement("a")
+        document.body.style.color="white"
+        linkback.textContent = "Powrót do strony głównej"
+        linkback.href=window.location.pathname
+        document.body.appendChild(linkback)
         return;
     }
 
@@ -303,6 +313,10 @@ async function renderGame() {
     const schemaData = await getAchievments();
     if (!achievinf || !schemaData) {
         document.body.textContent = "Nie udało się pobrać danych osiągnięć.";
+        const linkback =document.createElement("a")
+        linkback.textContent = "Powrót do strony głównej"
+        linkback.href=window.location.pathname
+        document.body.appendChild(linkback)
         return;
     }
 
